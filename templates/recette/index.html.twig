@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des recettes{% endblock %}
+
+{% block body %}
+<h1>My recipes</h1>
+{% for recette in recettes %}
+    <div id="container-recette" class="d-flex flex-column align-items-center">
+        <h3>{{ recette.titre }}</h3>
+        <p>{{ recette.description }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
