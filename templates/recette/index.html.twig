@@ -3,11 +3,28 @@
 {% block title %}Liste des recettes{% endblock %}
 
 {% block body %}
-<h1>My recipes</h1>
-{% for recette in recettes %}
-    <div id="container-recette" class="d-flex flex-column align-items-center">
-        <h3>{{ recette.titre }}</h3>
-        <p>{{ recette.description }}</p>
+<h1 class="p-2 text-custom" id="title">My recipes</h1>
+<div class="container">
+    <div class="row">
+        {% for recette in recettes %}
+            <div class="col-md-4 mb-4">
+                <div id="container-recette" class="card text-start">
+                    <div class="card-body">
+                        <h3 class="card-title text-custom fs-2">{{ recette.titre }}</h3>
+                        <p class="card-text">{{ recette.description }}</p>
+                        <h5>Ingrédients :</h5>
+                        <div class="d-flex flex-wrap p-3">
+                            {% for composition in recette.compositions %}
+                                <div class="d-flex flex-column align-items-center me-3 border border-transparent rounded p-3">
+                                    <p class="mb-0 me-1">{{ composition.ingredient.nom }}</p>
+                                    <p class="mb-0 me-1">{{ composition.quantite }} {{ composition.unite }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+</div>
 {% endblock %}

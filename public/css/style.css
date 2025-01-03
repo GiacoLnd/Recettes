@@ -2,11 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: grey;
 }
 .container-recette{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-color: grey;
+}
+.bg-custom{
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+}
+#title{
+    margin: 20px 0 25px 72px;
+}
+.text-custom{
+    color: #01796F;
 }

@@ -18,4 +18,5 @@ class RecetteController extends AbstractController
             'recettes' => $recettes,
         ]);
     }
+
 }
